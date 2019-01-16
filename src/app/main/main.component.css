@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-starship {
+  width: 400px;
+  margin-top: 3%;
+}
+
+mat-card {
+  font-style: italic;
+  margin: 8px;
+  width: fit-content;
+  height: 10px;
+  line-height: 10px;
+  white-space: nowrap;
+  border-radius: 10px;
+  background-color: #cccc00;
+}
+mat-divider {
+  background-color: white;
+}
+mat-card.pilote {
+
+background-color:  #e6e600;
+}

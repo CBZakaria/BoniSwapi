@@ -1,0 +1,33 @@
+<div>
+  <div class="main">
+    <div>
+      <mat-form-field class="search-starship">
+        <input class="searchTerm" matInput type="text" placeholder="Search" [(ngModel)]="query">
+        <button mat-button matSuffix [disabled]="query === ''" mat-icon-button color="primary" (click)="getStarShips()">
+          <mat-icon aria-label="Example icon-button with a heart icon">search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+  <div *ngIf="!found">
+    <mat-card>No starship found !</mat-card>
+  </div>
+  <div *ngFor="let s of starShips">
+    <mat-card>Starship Name: {{s.name}}</mat-card>
+    <mat-card>Starship Model: {{s.model}}</mat-card>
+    <mat-card>Pilotes:</mat-card>
+    <ul>
+      <div *ngIf="s.pilots.length">
+        <div *ngFor="let pilote of s.pilots">
+            <mat-card *ngIf="pilote.name" class="pilote"> {{pilote.name}}</mat-card>
+        </div>
+      </div>
+      <div *ngIf="!s.pilots.length">
+        <mat-card class="pilote">
+           Driven by AI !
+        </mat-card>
+      </div>
+    </ul>
+    <mat-divider *ngIf="!s[s.length-1]"></mat-divider>
+  </div>
+</div>
